@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'AuthBlock' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  pod 'JVFloatLabeledTextField'
+  pod 'AFNetworking', '~> 3.0'
+  pod 'DGActivityIndicatorView'
+
+  # Pods for AuthBlock
+
+  target 'AuthBlockTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'AuthBlockUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
