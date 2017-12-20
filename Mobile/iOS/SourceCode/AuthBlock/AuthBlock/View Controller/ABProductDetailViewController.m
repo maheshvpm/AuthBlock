@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.sellerInfoView.layer.borderWidth = 1.0;
+    self.sellerInfoView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
 
 - (void)didReceiveMemoryWarning {

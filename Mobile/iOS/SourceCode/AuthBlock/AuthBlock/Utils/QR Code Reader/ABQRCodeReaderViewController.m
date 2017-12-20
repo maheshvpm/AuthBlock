@@ -7,6 +7,7 @@
 //
 
 #import "ABQRCodeReaderViewController.h"
+#import "SWRevealViewController.h"
 
 @interface ABQRCodeReaderViewController ()
 
@@ -27,6 +28,8 @@
 {
     [super viewDidLoad];
 
+    [self customSetup];
+    
     // Set scan QR code title.
     self.title = @"Scan QR Code";
 }
@@ -75,6 +78,18 @@
 {
     [super viewWillLayoutSubviews];
     _videoPreviewLayer.frame = self.view.layer.bounds;
+}
+
+- (void)customSetup
+{
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.menuButton setTarget: revealViewController];
+        [self.menuButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:revealViewController.panGestureRecognizer];
+        [self.view addGestureRecognizer:revealViewController.tapGestureRecognizer];
+    }
 }
 
 /*!
