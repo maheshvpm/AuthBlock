@@ -133,7 +133,8 @@
 - ( UITableViewCell * )tableView:( UITableView * )tableView
            cellForRowAtIndexPath:( NSIndexPath * )indexPath
 {
-    if (self.products.count > 0) {
+    if ( self.products.count > 0 )
+    {
         static NSString *identifier = @"ABProductListCell";
         ABProductListCell *cell = (ABProductListCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
         if (cell == nil) {
@@ -142,7 +143,7 @@
         }
         cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
-        
+
         ABProduct *product = [[ABProduct alloc]init];
         product = self.products[indexPath.row];
         cell.productTitle.text = product.productName;

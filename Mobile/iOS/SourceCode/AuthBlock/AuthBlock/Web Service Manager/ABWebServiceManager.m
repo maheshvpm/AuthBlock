@@ -17,7 +17,7 @@
 - ( void )getProductsWithSccessResponse:( ProductListResponse )products
                     withFailureResponse:( WebServiceFailureResponse )failure
 {
-    
+
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
@@ -27,12 +27,12 @@
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    
+
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@Product",KBaseURL]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
 
     [request addValue:@"identity" forHTTPHeaderField:@"Accept-Encoding"];
-    
+
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             ABError * serviceError = [[ABError alloc]init];
