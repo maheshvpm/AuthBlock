@@ -10,11 +10,12 @@
 #import <AFNetworking/AFNetworking.h>
 #import "ABParser.h"
 
+#define KBaseURL @"http://172.24.212.116:3000/api/"
+
 @implementation ABWebServiceManager
 
-- ( void )getProducts:( NSString * )urlString
-   withSccessResponse:( ProductListResponse )products
-  withFailureResponse:( WebServiceFailureResponse )failure
+- ( void )getProductsWithSccessResponse:( ProductListResponse )products
+                    withFailureResponse:( WebServiceFailureResponse )failure
 {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -27,10 +28,7 @@
 
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
-    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:
-                 NSUTF8StringEncoding];
-
-    NSURL *URL = [NSURL URLWithString:urlString];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@Product",KBaseURL]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
 
     [request addValue:@"identity" forHTTPHeaderField:@"Accept-Encoding"];
@@ -43,20 +41,9 @@
             failure(serviceError);
         } else {
 
-            NSNumber *status = responseObject[@"success"];
-
-            if ( [status boolValue] ) {
-                ABParser *parser = [[ABParser alloc]init];
-
-                NSMutableArray * responseArray = [parser parseProductList:responseObject];
-                products(responseArray);
-            }
-            else {
-
-                ABError * serviceError = [[ABError alloc]init];
-                serviceError.errorMessage = responseObject[@"message"];
-                failure(serviceError);
-            }
+            ABParser *parser = [[ABParser alloc]init];
+            NSMutableArray * responseArray = [parser parseProductList:responseObject];
+            products(responseArray);
         }
     }];
     [dataTask resume];

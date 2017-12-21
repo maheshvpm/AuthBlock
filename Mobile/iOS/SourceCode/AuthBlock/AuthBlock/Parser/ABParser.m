@@ -15,15 +15,20 @@
 {
     NSMutableArray *products = [[NSMutableArray alloc]init];
     
-    if (response)
+    if ( response )
     {
-        for (NSDictionary *dict in response[@"orders"])
+        for (NSDictionary *dict in response)
         {
             ABProduct *product = [[ABProduct alloc]init];
-            product.productName = dict[@"product_name"];
-            product.productDescription = dict[@"product_description"];
-            product.productPrice = dict[@"product_price"];
-            product.productImageURL = dict[@"product_image"];
+            product.productName = dict[@"productName"];
+            product.productDescription = dict[@"productDesc"];
+            product.productPrice = dict[@"productPrice"];
+            product.productImageURL = dict[@"productImageUrl"];
+            product.produdtId = dict[@"produdtId"];
+            product.productSKUID = dict[@"productSKUID"];
+            product.productHolder = dict[@"productHolder"];
+            product.productPriceHistory = dict[@"productPriceHistory"];
+            product.productPreviousOwner = dict[@"productPreviousOwner"];
             [products addObject:product];
         }
     }

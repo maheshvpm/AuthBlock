@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ABProduct.h"
 @interface ABProductDetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *sellerName;
 @property (weak, nonatomic) IBOutlet UILabel *rewards;
 @property (weak, nonatomic) IBOutlet UIView *sellerInfoView;
+
+@property ( nonatomic, strong ) ABProduct *product;
 
 @end
