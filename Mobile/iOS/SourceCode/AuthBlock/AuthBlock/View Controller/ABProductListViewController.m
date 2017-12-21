@@ -172,7 +172,7 @@
 - ( void )    tableView:( UITableView * )tableView
 didSelectRowAtIndexPath:( NSIndexPath * )indexPath
 {
-    if (self.products.count > 0) {
+    if (self.products.count == 0) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
         ABProductDetailViewController *detailVC = ( ABProductDetailViewController * )[storyboard instantiateViewControllerWithIdentifier:@"productDetailViewController"];

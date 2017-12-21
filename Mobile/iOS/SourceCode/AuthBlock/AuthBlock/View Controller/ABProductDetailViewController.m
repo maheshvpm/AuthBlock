@@ -36,6 +36,9 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)shareAction:(id)sender {
+}
+
 //MARK:- Tableview Datasource and Delegates
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
