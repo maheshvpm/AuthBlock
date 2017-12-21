@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="lqi-DM-jEb">
-                        <rect key="frame" x="0.0" y="-1" width="427" height="340"/>
+                        <rect key="frame" x="15" y="15" width="397" height="309.5"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4y-QD-qJZ">
                         <rect key="frame" x="387" y="10" width="30" height="30"/>
@@ -32,12 +32,12 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lqi-DM-jEb" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="0g8-FN-9AT"/>
+                    <constraint firstAttribute="trailing" secondItem="lqi-DM-jEb" secondAttribute="trailing" constant="15" id="BOZ-cZ-ysG"/>
                     <constraint firstAttribute="trailing" secondItem="o4y-QD-qJZ" secondAttribute="trailing" constant="10" id="YFZ-eH-MwX"/>
-                    <constraint firstItem="lqi-DM-jEb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Z7j-OV-Hs2"/>
-                    <constraint firstItem="lqi-DM-jEb" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="bQh-c8-pe9"/>
+                    <constraint firstAttribute="bottom" secondItem="lqi-DM-jEb" secondAttribute="bottom" constant="15" id="a3v-4K-nRm"/>
+                    <constraint firstItem="lqi-DM-jEb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="gPs-4q-oUj"/>
                     <constraint firstItem="o4y-QD-qJZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="i7B-Rj-fhI"/>
-                    <constraint firstItem="lqi-DM-jEb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="nO2-8U-KfQ"/>
+                    <constraint firstItem="lqi-DM-jEb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="rxa-2W-sNo"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
@@ -49,7 +49,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="certified.png" width="32" height="32"/>
+        <image name="certified.png" width="100" height="100"/>
         <image name="sample_image.png" width="240" height="300"/>
     </resources>
 </document>

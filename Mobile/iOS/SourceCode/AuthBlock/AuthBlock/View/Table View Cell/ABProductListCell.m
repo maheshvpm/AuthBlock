@@ -12,6 +12,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    self.productImageView.layer.cornerRadius = 50.0f;
+    self.productImageView.layer.borderWidth = 2.0f;
+    self.productImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.productImageView.layer.masksToBounds = YES;
     // Initialization code
 }
 

@@ -17,6 +17,4 @@
 
 - ( IBAction )loginButtonAction:( id )sender;
 
-- ( IBAction )registerButtonAction:( id )sender;
-
 @end

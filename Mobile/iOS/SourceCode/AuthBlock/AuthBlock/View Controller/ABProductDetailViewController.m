@@ -11,33 +11,53 @@
 #import "ABProductDescriptionCell.h"
 #import "ABSellerInfoCell.h"
 #import "ABCertificationCell.h"
+#import "ABWebServiceManager.h"
+#import "ABActivityIndicator.h"
 
-typedef NS_ENUM(NSInteger, ProductDetailSections) {
+typedef NS_ENUM( NSInteger, ProductDetailSections ) {
     ProductImage,
     ProductDescription,
     SellerInfo,
     Certification
 };
 
-@interface ABProductDetailViewController () <ABProductVerifyDelegate>
+@interface ABProductDetailViewController () < ABProductVerifyDelegate >
+
+@property ( nonatomic, strong )ABWebServiceManager *serviceManager;
+@property ( nonatomic, strong )ABActivityIndicator *activityIndicator;
 
 @end
 
 @implementation ABProductDetailViewController
 
-- (void)viewDidLoad {
+- ( void )viewDidLoad
+{
     [super viewDidLoad];
+
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"Bg.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    self.serviceManager = [[ABWebServiceManager alloc]init];
+    self.activityIndicator = [[ABActivityIndicator alloc]init];
+
     self.productDetailTableView.dataSource = self;
     self.productDetailTableView.delegate = self;
+    self.productDetailTableView.backgroundColor = [UIColor clearColor];
 }
 
-- (void)didReceiveMemoryWarning {
+- ( void )didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)shareAction:(id)sender {
-    if (self.product != nil) {
+- ( IBAction )shareAction:( id )sender
+{
+    if ( self.product != nil )
+    {
         NSString *title = self.product.productName;
         NSURL *imageURL = [NSURL URLWithString:self.product.productImageURL];
         NSArray *objectsToShare = @[title, imageURL];
@@ -49,16 +69,22 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
 }
 
 //MARK:- Tableview Datasource and Delegates
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- ( NSInteger )numberOfSectionsInTableView:( UITableView * )tableView
+{
     return 4;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- ( NSInteger )tableView:( UITableView * )tableView
+   numberOfRowsInSection:( NSInteger )section
+{
     return 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
+- ( CGFloat )tableView:( UITableView * )tableView
+heightForRowAtIndexPath:( NSIndexPath * )indexPath
+{
+    switch ( indexPath.section )
+    {
         case ProductImage:
             return self.view.frame.size.height * 0.4;
         case ProductDescription:
@@ -72,8 +98,11 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    switch (section) {
+- ( CGFloat )tableView:( UITableView * )tableView
+heightForHeaderInSection:( NSInteger )section
+{
+    switch ( section )
+    {
         case SellerInfo:
             return 50;
         default:
@@ -81,14 +110,19 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case SellerInfo: {
+- ( UIView * )tableView:( UITableView * )tableView
+ viewForHeaderInSection:( NSInteger )section
+{
+    switch (section)
+    {
+        case SellerInfo:
+        {
             UIView *headerView =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 50)];
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, tableView.frame.size.width, 50)];
             [label setFont:[UIFont boldSystemFontOfSize:18]];
             NSString *string =@"SELLER INFO";
             [label setText:string];
+            [label setTextColor:[UIColor whiteColor]];
             [headerView addSubview:label];
             return headerView;
         }
@@ -97,23 +131,32 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+- ( CGFloat )tableView:( UITableView * )tableView
+heightForFooterInSection:( NSInteger )section
+{
     return 0.1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
-        case ProductImage: {
+- ( UITableViewCell * )tableView:( UITableView * )tableView
+           cellForRowAtIndexPath:( NSIndexPath * )indexPath
+{
+    switch ( indexPath.section )
+    {
+        case ProductImage:
+        {
             static NSString *identifier = @"ABProductDetailImageCell";
             ABProductDetailImageCell *cell = (ABProductDetailImageCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
             if (cell == nil) {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
                 cell = [nib objectAtIndex:0];
             }
-            [cell.imageView setImageWithURL:[NSURL URLWithString:self.product.productImageURL]];
+            cell.backgroundColor = [UIColor clearColor];
+            cell.contentView.backgroundColor = [UIColor clearColor];
+            [cell.productImageView setImageWithURL:[NSURL URLWithString:self.product.productImageURL] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
             return cell;
         }
-        case ProductDescription: {
+        case ProductDescription:
+        {
             static NSString *identifier = @"ABProductDescriptionCell";
             ABProductDescriptionCell *cell = (ABProductDescriptionCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
             if (cell == nil) {
@@ -122,35 +165,47 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
             }
             cell.delegate = self;
             cell.productTitle.text = self.product.productName;
-            cell.productPrice.text = [NSString stringWithFormat:@"%@",self.product.productPrice];
+            cell.productPrice.text = [NSString stringWithFormat:@"₹ %@",self.product.productPrice];
+            cell.backgroundColor = [UIColor clearColor];
+            cell.contentView.backgroundColor = [UIColor clearColor];
             return cell;
         }
-        case SellerInfo: {
+        case SellerInfo:
+        {
             static NSString *identifier = @"ABSellerInfoCell";
             ABSellerInfoCell *cell = (ABSellerInfoCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
             if (cell == nil) {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
                 cell = [nib objectAtIndex:0];
+                cell.backgroundColor = [UIColor clearColor];
+                cell.contentView.backgroundColor = [UIColor clearColor];
             }
             return cell;
         }
-        case Certification: {
+        case Certification:
+        {
             static NSString *identifier = @"ABCertificationCell";
             ABCertificationCell *cell = (ABCertificationCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
             if (cell == nil) {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
                 cell = [nib objectAtIndex:0];
+                cell.backgroundColor = [UIColor clearColor];
+                cell.contentView.backgroundColor = [UIColor clearColor];
             }
             return cell;
         }
-        default: {
+        default:
+        {
             UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+            cell.backgroundColor = [UIColor clearColor];
+            cell.contentView.backgroundColor = [UIColor clearColor];
             return cell;
         }
     }
 }
 
--(void)verifyProduct:(NSString *)productId {
+-( void )verifyProduct:( NSString * )productId
+{
     NSLog(@"Verify product for product id:%@", productId);
 }
 

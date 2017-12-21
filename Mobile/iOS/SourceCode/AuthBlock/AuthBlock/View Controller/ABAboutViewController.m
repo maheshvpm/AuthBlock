@@ -1,22 +1,22 @@
 //
-//  ABHistoryViewController.m
+//  ABAboutViewController.m
 //  AuthBlock
 //
-//  Created by Ramesh D on 12/20/17.
+//  Created by Ramesh D on 12/21/17.
 //  Copyright © 2017 Logu Subramaniyan. All rights reserved.
 //
 
-#import "ABHistoryViewController.h"
+#import "ABAboutViewController.h"
 #import "SWRevealViewController.h"
-#import "ABQRCodeReaderViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ABHistoryViewController ()<ABQRCodeReaderDelegate>
+@interface ABAboutViewController () < MFMailComposeViewControllerDelegate >
 
 @end
 
-@implementation ABHistoryViewController
+@implementation ABAboutViewController
 
-- (void)viewDidLoad
+- ( void )viewDidLoad
 {
     [super viewDidLoad];
     
@@ -25,13 +25,11 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-
+    
     [self customSetup];
-
-    [self navigateToScanQRCodeViewControlller];
 }
 
-- (void)didReceiveMemoryWarning
+- ( void )didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
@@ -53,44 +51,45 @@
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
+
     [super encodeRestorableStateWithCoder:coder];
 }
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
+
     [super decodeRestorableStateWithCoder:coder];
 }
 
 - (void)applicationFinishedRestoringState
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
+
     // Call whatever function you need to visually restore
     [self customSetup];
 }
 
-- ( void )navigateToScanQRCodeViewControlller
+- (IBAction)contactUSButtonAction:(id)sender
 {
-    ABQRCodeReaderViewController *qrCodeReaderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"QRCodeReaderViewController"];
-    qrCodeReaderViewController.delegate = self;
-    [self.navigationController pushViewController:qrCodeReaderViewController animated:YES];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://7871564595"]];
 }
 
-#pragma mark - MFQRCodeReaderDelegate
-
-/*!
- Notify QR code scan completion.
- 
- @param result QR code result.
- */
-- ( void )readerDidScanResult:( NSString * )result
+- (IBAction)emailButtonAction:(id)sender
 {
-    NSLog(@"Scan Result: %@",result);
-    // Pop QR code reader view controller.
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *composeViewController = [[MFMailComposeViewController alloc] initWithNibName:nil bundle:nil];
+        [composeViewController setMailComposeDelegate:self];
+        [composeViewController setToRecipients:@[@"guru.ramachandran@aspiresys.com",@"mani.palanivel@aspiresys.com",@"yogaraj.rajendran@aspiresys.com",@"mahesh.muthusamy@aspiresys.com",@"ramesh.duraisamy@aspiresys.com",@"kovarthanan.murugan@aspiresys.com"]];
+        [composeViewController setSubject:@"Feedback"];
+        [self presentViewController:composeViewController animated:YES completion:nil];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    //Add an alert in case of failure
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

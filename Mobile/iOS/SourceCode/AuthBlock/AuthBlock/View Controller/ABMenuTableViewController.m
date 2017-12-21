@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-     _menuArray = [[NSMutableArray alloc] initWithObjects:@"Home",@"Scan QR Code",@"Logout", nil];
+     _menuArray = [[NSMutableArray alloc] initWithObjects:@"Admin",@"Home",@"Scan QR Code",@"About",@"Logout", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,22 +47,32 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
+
     switch ( indexPath.row )
     {
+
         case 0:
+            CellIdentifier = @"Profile";
+            break;
+
+        case 1:
             CellIdentifier = @"Home";
             break;
-            
-        case 1:
+
+        case 2:
             CellIdentifier = @"ScanQRCode";
             break;
-            
-        case 2:
+
+        case 3:
+            CellIdentifier = @"About";
+            break;
+
+        case 4:
             CellIdentifier = @"Logout";
             break;
+
     }
-    
+
     ABMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     cell.menuTitle.text = [self.menuArray objectAtIndex:indexPath.row];
 
@@ -76,7 +86,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 2) {
+    if (indexPath.row == 4) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

@@ -41,13 +41,13 @@
 
     [self customSetup];
 
-    [self getProducts];
+//    [self getProducts];
 
     self.productListTableView.dataSource = self;
     self.productListTableView.delegate = self;
-    self.refreshController = [[UIRefreshControl alloc] init];
-    [self.refreshController addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
-    [self.productListTableView addSubview:self.refreshController];
+//    self.refreshController = [[UIRefreshControl alloc] init];
+//    [self.refreshController addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+//    [self.productListTableView addSubview:self.refreshController];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,18 +109,19 @@
 
 - ( NSInteger )tableView:( UITableView * )tableView numberOfRowsInSection:( NSInteger )section
 {
-    if (self.products.count > 0) {
-        return self.products.count;
-    }
-    return 1;
+//    if (self.products.count > 0) {
+//        return self.products.count;
+        return 20;
+//    }
+//    return 1;
 }
 
 - ( CGFloat )tableView:( UITableView * )tableView heightForRowAtIndexPath:( NSIndexPath * )indexPath
 {
-    if (self.products.count > 0) {
+//    if ( self.products.count > 0 ) {
         return self.view.frame.size.height * 0.2;
-    }
-    return self.view.frame.size.height * 0.1;
+//    }
+//    return self.view.frame.size.height * 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -134,8 +135,8 @@
 - ( UITableViewCell * )tableView:( UITableView * )tableView
            cellForRowAtIndexPath:( NSIndexPath * )indexPath
 {
-    if ( self.products.count > 0 )
-    {
+//    if ( self.products.count > 0 )
+//    {
         static NSString *identifier = @"ABProductListCell";
         ABProductListCell *cell = (ABProductListCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
         if (cell == nil) {
@@ -145,29 +146,34 @@
         cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
 
-        ABProduct *product = [[ABProduct alloc]init];
-        product = self.products[indexPath.row];
-        cell.productTitle.text = product.productName;
-        cell.productDescription.text = product.productDescription;
-        cell.productPrice.text = [ NSString stringWithFormat:@"%@",product.productPrice];
-        [cell.imageView setImageWithURL:[NSURL URLWithString:product.productImageURL]];
+//        ABProduct *product = [[ABProduct alloc]init];
+//        product = self.products[indexPath.row];
+//        cell.productTitle.text = product.productName;
+//        cell.productDescription.text = product.productDescription;
+//        cell.productPrice.text = [ NSString stringWithFormat:@"%@",product.productPrice];
+//        [cell.imageView setImageWithURL:[NSURL URLWithString:product.productImageURL]];
         
+        cell.productTitle.text = @"Kohinoor Diamond";
+        cell.productDescription.text = @"dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest";
+        cell.productPrice.text = [ NSString stringWithFormat:@"₹ %d",1000];
+        [cell.productImageView setImageWithURL:[NSURL URLWithString:@"https://www.fastrack.in/datasource/products/table-top/fastrack-girls-stainless-steel-analog-white-watches-6168sm02(table-top).jpg"] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
+
         return cell;
-    }
+//    }
     
-    // Load information cell
-    static NSString *identifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    cell.backgroundColor = [UIColor clearColor];
-    cell.contentView.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.textLabel.text = @"No products available";
-    cell.textLabel.textColor = [UIColor whiteColor];
-    return cell;
+//    // Load information cell
+//    static NSString *identifier = @"cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+//    if (cell == nil) {
+//        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
+//        cell = [nib objectAtIndex:0];
+//    }
+//    cell.backgroundColor = [UIColor clearColor];
+//    cell.contentView.backgroundColor = [UIColor clearColor];
+//    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+//    cell.textLabel.text = @"No products available";
+//    cell.textLabel.textColor = [UIColor whiteColor];
+//    return cell;
 }
 
 - ( void )    tableView:( UITableView * )tableView
@@ -178,7 +184,13 @@ didSelectRowAtIndexPath:( NSIndexPath * )indexPath
 
         ABProductDetailViewController *detailVC = ( ABProductDetailViewController * )[storyboard instantiateViewControllerWithIdentifier:@"productDetailViewController"];
 
-        detailVC.product = self.products[ indexPath.row ];
+        ABProduct *product = [[ABProduct alloc]init];
+        product.productName = @"Kohinoor Diamond";
+        product.productDescription = @"dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest dest";
+        product.productPrice = [NSNumber numberWithInt:1000];
+        product.productImageURL = @"https://www.fastrack.in/datasource/products/table-top/fastrack-girls-stainless-steel-analog-white-watches-6168sm02(table-top).jpg";
+        detailVC.product = product;
+//        detailVC.product = self.products[ indexPath.row ];
         [self.navigationController pushViewController:detailVC animated:YES];
     }
 }
@@ -194,7 +206,26 @@ didSelectRowAtIndexPath:( NSIndexPath * )indexPath
         [self.productListTableView reloadData];
 
     } withFailureResponse:^(ABError *error) {
+
         [self.activityIndicator stopActivityIndicator];
+
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@"Error"
+                                     message:error.errorMessage
+                                     preferredStyle:UIAlertControllerStyleAlert];
+
+        //Add Buttons
+        UIAlertAction* noButton = [UIAlertAction
+                                   actionWithTitle:@"Cancel"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle no, thanks button
+                                   }];
+
+        //Add your buttons to alert controller
+        [alert addAction:noButton];
+
+        [self presentViewController:alert animated:YES completion:nil];
     }];
 }
 

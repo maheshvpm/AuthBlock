@@ -21,7 +21,6 @@
 		18F239201FE91D2100BBA1AE /* ABProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2391F1FE91D2100BBA1AE /* ABProductDetailViewController.m */; };
 		18F239241FE91E5600BBA1AE /* ABProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F239211FE91E5600BBA1AE /* ABProductListCell.m */; };
 		18F239251FE91E5600BBA1AE /* ABProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F239221FE91E5600BBA1AE /* ABProductListCell.xib */; };
-		18F239271FE937CC00BBA1AE /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F239261FE937BE00BBA1AE /* sample_image.png */; };
 		1D18B6AE8DAD3E6734AC63A8 /* libPods-AuthBlockTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4019719B7D134325593AF83C /* libPods-AuthBlockTests.a */; };
 		4A11ED051FEA33D500AE41AF /* ABHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A11ED041FEA33D500AE41AF /* ABHistoryViewController.m */; };
 		4A34487E1FE908E200C2B2D8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A34487D1FE908E200C2B2D8 /* SWRevealViewController.m */; };
@@ -36,6 +35,12 @@
 		4A3448951FE9119700C2B2D8 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3448911FE9119700C2B2D8 /* home.png */; };
 		4A3448981FE916D900C2B2D8 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3448961FE916D800C2B2D8 /* menu.png */; };
 		4A3448991FE916D900C2B2D8 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3448971FE916D900C2B2D8 /* menu@2x.png */; };
+		4A91B0AB1FEBF5F000A59C4F /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A91B0A91FEBF5EE00A59C4F /* Placeholder.png */; };
+		4A91B0AC1FEBF5F000A59C4F /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A91B0AA1FEBF5F000A59C4F /* about.png */; };
+		4A91B0B51FEC28EF00A59C4F /* ABAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A91B0B41FEC28EF00A59C4F /* ABAboutViewController.m */; };
+		4A91B0B71FEC2FD200A59C4F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A91B0B61FEC2FD200A59C4F /* MessageUI.framework */; };
+		4A91B0BA1FEC408B00A59C4F /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A91B0B81FEC408A00A59C4F /* profile.png */; };
+		4A91B0BB1FEC408B00A59C4F /* share_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A91B0B91FEC408A00A59C4F /* share_icon@2x.png */; };
 		E55AE0C2614415D0F654D082 /* libPods-AuthBlockUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 787DCC1109D84F0A213BEFAC /* libPods-AuthBlockUITests.a */; };
 		EAB29A451FE5684B003A5AB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB29A431FE5684B003A5AB2 /* Main.storyboard */; };
 		EAB29A471FE5684B003A5AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB29A461FE5684B003A5AB2 /* Assets.xcassets */; };
@@ -98,7 +103,6 @@
 		18F239211FE91E5600BBA1AE /* ABProductListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABProductListCell.m; sourceTree = "<group>"; };
 		18F239221FE91E5600BBA1AE /* ABProductListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABProductListCell.xib; sourceTree = "<group>"; };
 		18F239231FE91E5600BBA1AE /* ABProductListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABProductListCell.h; sourceTree = "<group>"; };
-		18F239261FE937BE00BBA1AE /* sample_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_image.png; sourceTree = "<group>"; };
 		4019719B7D134325593AF83C /* libPods-AuthBlockTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AuthBlockTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		458CBD0984A0F1A321ED0999 /* libPods-AuthBlock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AuthBlock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A11ED031FEA33D500AE41AF /* ABHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABHistoryViewController.h; sourceTree = "<group>"; };
@@ -120,6 +124,13 @@
 		4A3448911FE9119700C2B2D8 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		4A3448961FE916D800C2B2D8 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		4A3448971FE916D900C2B2D8 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		4A91B0A91FEBF5EE00A59C4F /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		4A91B0AA1FEBF5F000A59C4F /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		4A91B0B31FEC28EF00A59C4F /* ABAboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABAboutViewController.h; sourceTree = "<group>"; };
+		4A91B0B41FEC28EF00A59C4F /* ABAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABAboutViewController.m; sourceTree = "<group>"; };
+		4A91B0B61FEC2FD200A59C4F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4A91B0B81FEC408A00A59C4F /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		4A91B0B91FEC408A00A59C4F /* share_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_icon@2x.png"; sourceTree = "<group>"; };
 		4AEA5C3D3D61D06B02AD2A6D /* Pods-AuthBlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthBlock.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthBlock/Pods-AuthBlock.release.xcconfig"; sourceTree = "<group>"; };
 		63FA5E44F6F99B22283368AA /* Pods-AuthBlockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthBlockUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthBlockUITests/Pods-AuthBlockUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		787DCC1109D84F0A213BEFAC /* libPods-AuthBlockUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AuthBlockUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A91B0B71FEC2FD200A59C4F /* MessageUI.framework in Frameworks */,
 				EAB29AB81FE5787C003A5AB2 /* AVFoundation.framework in Frameworks */,
 				F58FBA05C2112843AEBE52A6 /* libPods-AuthBlock.a in Frameworks */,
 			);
@@ -214,10 +226,13 @@
 		4A34487A1FE9087700C2B2D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4A91B0B81FEC408A00A59C4F /* profile.png */,
+				4A91B0B91FEC408A00A59C4F /* share_icon@2x.png */,
+				4A91B0AA1FEBF5F000A59C4F /* about.png */,
+				4A91B0A91FEBF5EE00A59C4F /* Placeholder.png */,
 				18DD178A1FEBD91C0006FE20 /* share_icon.png */,
 				18DD177C1FEB978F0006FE20 /* certified.png */,
 				18DD177D1FEB978F0006FE20 /* rating.png */,
-				18F239261FE937BE00BBA1AE /* sample_image.png */,
 				4A3448961FE916D800C2B2D8 /* menu.png */,
 				4A3448971FE916D900C2B2D8 /* menu@2x.png */,
 				4A3448911FE9119700C2B2D8 /* home.png */,
@@ -265,6 +280,7 @@
 		4F768809D8C5026D590C91BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A91B0B61FEC2FD200A59C4F /* MessageUI.framework */,
 				EAB29AB71FE5787C003A5AB2 /* AVFoundation.framework */,
 				458CBD0984A0F1A321ED0999 /* libPods-AuthBlock.a */,
 				4019719B7D134325593AF83C /* libPods-AuthBlockTests.a */,
@@ -403,6 +419,8 @@
 				4A34488C1FE90F3F00C2B2D8 /* ABMenuTableViewController.m */,
 				4A11ED031FEA33D500AE41AF /* ABHistoryViewController.h */,
 				4A11ED041FEA33D500AE41AF /* ABHistoryViewController.m */,
+				4A91B0B31FEC28EF00A59C4F /* ABAboutViewController.h */,
+				4A91B0B41FEC28EF00A59C4F /* ABAboutViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -585,15 +603,18 @@
 				18DD177F1FEB978F0006FE20 /* rating.png in Resources */,
 				18DD178B1FEBD91D0006FE20 /* share_icon.png in Resources */,
 				EAB29A471FE5684B003A5AB2 /* Assets.xcassets in Resources */,
-				18F239271FE937CC00BBA1AE /* sample_image.png in Resources */,
 				4A3448981FE916D900C2B2D8 /* menu.png in Resources */,
 				18DD177E1FEB978F0006FE20 /* certified.png in Resources */,
 				4A3448921FE9119700C2B2D8 /* QR Code.png in Resources */,
 				4A3448931FE9119700C2B2D8 /* QR Code@2x.png in Resources */,
 				4A3448951FE9119700C2B2D8 /* home.png in Resources */,
+				4A91B0BB1FEC408B00A59C4F /* share_icon@2x.png in Resources */,
 				18DD17761FEB8F2D0006FE20 /* ABProductDetailImageCell.xib in Resources */,
+				4A91B0AB1FEBF5F000A59C4F /* Placeholder.png in Resources */,
+				4A91B0BA1FEC408B00A59C4F /* profile.png in Resources */,
 				18DD17841FEBB0320006FE20 /* ABSellerInfoCell.xib in Resources */,
 				18DD177B1FEB93710006FE20 /* ABProductDescriptionCell.xib in Resources */,
+				4A91B0AC1FEBF5F000A59C4F /* about.png in Resources */,
 				4A3448941FE9119700C2B2D8 /* logout.png in Resources */,
 				4A3448991FE916D900C2B2D8 /* menu@2x.png in Resources */,
 				4A3448831FE90BDB00C2B2D8 /* Bg.png in Resources */,
@@ -765,6 +786,7 @@
 				EAB29A9E1FE56DB4003A5AB2 /* ABCache.m in Sources */,
 				18DD17751FEB8F2D0006FE20 /* ABProductDetailImageCell.m in Sources */,
 				4A34488A1FE90F0700C2B2D8 /* ABMenuTableViewCell.m in Sources */,
+				4A91B0B51FEC28EF00A59C4F /* ABAboutViewController.m in Sources */,
 				EAB29A921FE56BEB003A5AB2 /* ABParser.m in Sources */,
 				EAB29AB61FE57803003A5AB2 /* ABQRCodeReaderViewController.m in Sources */,
 				18F239241FE91E5600BBA1AE /* ABProductListCell.m in Sources */,
