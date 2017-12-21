@@ -98,6 +98,7 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
                 cell = [nib objectAtIndex:0];
             }
+            [cell.imageView setImageWithURL:[NSURL URLWithString:self.product.productImageURL]];
             return cell;
         }
         case ProductDescription: {

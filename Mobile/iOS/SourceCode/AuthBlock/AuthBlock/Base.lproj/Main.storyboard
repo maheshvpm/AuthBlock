@@ -261,7 +261,7 @@
                         <color key="backgroundColor" red="0.1333333333" green="0.1764705882" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.1333333333" green="0.1764705882" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Home" rowHeight="75" id="2lZ-kN-kZq" customClass="ABMenuTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Home" rowHeight="75" id="2lZ-kN-kZq" customClass="ABMenuTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2lZ-kN-kZq" id="JZj-Zl-Wkv">
@@ -312,7 +312,7 @@
                                     <segue destination="exS-iH-syE" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="3mc-a2-3yl"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScanQRCode" rowHeight="75" id="Ogr-2Z-hBv" customClass="ABMenuTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScanQRCode" rowHeight="75" id="Ogr-2Z-hBv" customClass="ABMenuTableViewCell">
                                 <rect key="frame" x="0.0" y="103" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ogr-2Z-hBv" id="tuV-hZ-qUi">
@@ -363,7 +363,7 @@
                                     <segue destination="GPd-Q7-ePK" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="7mi-gy-0Go"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Logout" rowHeight="75" id="b4H-fg-O7W" customClass="ABMenuTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Logout" rowHeight="75" id="b4H-fg-O7W" customClass="ABMenuTableViewCell">
                                 <rect key="frame" x="0.0" y="178" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b4H-fg-O7W" id="9vr-Xm-5cb">

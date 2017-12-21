@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ABProduct.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ABProductDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

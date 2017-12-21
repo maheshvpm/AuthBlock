@@ -13,6 +13,7 @@
 #import "ABWebServiceManager.h"
 #import "ABActivityIndicator.h"
 #import "ABProduct.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ABProductListViewController ()
 
@@ -148,6 +149,7 @@
         cell.productTitle.text = product.productName;
         cell.productDescription.text = product.productDescription;
         cell.productPrice.text = [ NSString stringWithFormat:@"%@",product.productPrice];
+        [cell.imageView setImageWithURL:[NSURL URLWithString:product.productImageURL]];
         
         return cell;
     }
@@ -161,8 +163,9 @@
     }
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.text = @"No products available";
+    cell.textLabel.textColor = [UIColor whiteColor];
     return cell;
 }
 
@@ -187,6 +190,7 @@ didSelectRowAtIndexPath:( NSIndexPath * )indexPath
 
         [self.activityIndicator stopActivityIndicator];
         self.products = products;
+        [self.productListTableView reloadData];
 
     } withFailureResponse:^(ABError *error) {
         [self.activityIndicator stopActivityIndicator];
