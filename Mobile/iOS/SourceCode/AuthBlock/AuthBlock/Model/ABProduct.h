@@ -11,7 +11,9 @@
 
 @interface ABProduct : NSObject
 
-@property ( nonatomic, strong ) NSString *name;
-@property ( nonatomic, strong ) ABHistory *history;
+@property ( nonatomic, strong ) NSString *productName;
+@property ( nonatomic, strong ) NSString *productDescription;
+@property ( nonatomic, strong ) NSString *productPrice;
+@property ( nonatomic, strong ) NSString *productImageURL;
 
 @end

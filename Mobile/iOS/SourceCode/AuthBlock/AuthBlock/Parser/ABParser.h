@@ -10,4 +10,6 @@
 
 @interface ABParser : NSObject
 
+- ( NSMutableArray * )parseProductList:( NSDictionary * )response;
+
 @end

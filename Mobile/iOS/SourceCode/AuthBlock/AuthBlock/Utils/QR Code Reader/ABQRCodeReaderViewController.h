@@ -24,6 +24,5 @@
 
 //! Delegate conforming to ABQRCodeReaderDelegate protocol.
 @property ( nonatomic, weak ) id < ABQRCodeReaderDelegate > delegate;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 
 @end

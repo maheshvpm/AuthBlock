@@ -10,8 +10,15 @@
 #import "SWRevealViewController.h"
 #import "ABProductListCell.h"
 #import "ABProductDetailViewController.h"
+#import "ABWebServiceManager.h"
+#import "ABActivityIndicator.h"
+#import "ABProduct.h"
 
 @interface ABProductListViewController ()
+
+@property ( nonatomic, strong )NSMutableArray *products;
+@property ( nonatomic, strong )ABWebServiceManager *serviceManager;
+@property ( nonatomic, strong )ABActivityIndicator *activityIndicator;
 
 @end
 
@@ -27,8 +34,13 @@
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
+    self.serviceManager = [[ABWebServiceManager alloc]init];
+    self.activityIndicator = [[ABActivityIndicator alloc]init];
+
     [self customSetup];
-    
+
+//    [self getProducts];
+
     self.productListTableView.dataSource = self;
     self.productListTableView.delegate = self;
 }
@@ -82,7 +94,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 20;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -98,6 +110,12 @@
     }
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
+    
+//    ABProduct *product = [[ABProduct alloc]init];
+//    product = self.products[indexPath.row];
+//    cell.productTitle.text = product.productName;
+//    cell.productDescription.text = product.productDescription;
+//    cell.productPrice.text = product.productPrice;
     return cell;
 }
 
@@ -108,5 +126,18 @@
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
+- ( void )getProducts
+{
+    [self.activityIndicator showActivityIndicator];
+
+    [self.serviceManager getProducts:@"http://www.mocky.io/v2/5a3928293700000616fd2f09" withSccessResponse:^(NSMutableArray *products) {
+
+        [self.activityIndicator stopActivityIndicator];
+        self.products = products;
+        
+    } withFailureResponse:^(ABError *error) {
+        [self.activityIndicator stopActivityIndicator];
+    }];
+}
 
 @end
