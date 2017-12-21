@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ABTransactionCell" rowHeight="117" id="KGk-i7-Jjw" customClass="ABTransactionCell">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="117"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="404" height="116.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewm-DK-dUr">
+                        <rect key="frame" x="10" y="3" width="384" height="29"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhW-EZ-JvY">
+                        <rect key="frame" x="10" y="44" width="137" height="29.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wc0-Hr-kgC">
+                        <rect key="frame" x="352" y="44" width="42" height="29.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LF2-Ye-0F5">
+                        <rect key="frame" x="10" y="84.5" width="128.5" height="29"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acV-gc-QOu">
+                        <rect key="frame" x="352" y="88.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LF2-Ye-0F5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.05" id="2g8-9d-TEW"/>
+                    <constraint firstItem="QhW-EZ-JvY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.05" id="3KB-qr-Sgp"/>
+                    <constraint firstItem="acV-gc-QOu" firstAttribute="centerY" secondItem="LF2-Ye-0F5" secondAttribute="centerY" id="5CH-jF-mxu"/>
+                    <constraint firstItem="ewm-DK-dUr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="0.05" id="5aM-mC-c8F"/>
+                    <constraint firstItem="ewm-DK-dUr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.05" id="6Cd-RF-s9d"/>
+                    <constraint firstItem="LF2-Ye-0F5" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.25" id="6te-4H-B3Z"/>
+                    <constraint firstItem="acV-gc-QOu" firstAttribute="centerX" secondItem="Wc0-Hr-kgC" secondAttribute="centerX" id="7ed-zW-NEI"/>
+                    <constraint firstItem="QhW-EZ-JvY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DMf-f7-qHM"/>
+                    <constraint firstItem="Wc0-Hr-kgC" firstAttribute="centerY" secondItem="QhW-EZ-JvY" secondAttribute="centerY" id="F9B-aY-mMv"/>
+                    <constraint firstItem="acV-gc-QOu" firstAttribute="trailing" secondItem="Wc0-Hr-kgC" secondAttribute="trailing" id="TAN-Tx-vxI"/>
+                    <constraint firstItem="ewm-DK-dUr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.95" id="XNb-E3-L6y"/>
+                    <constraint firstItem="Wc0-Hr-kgC" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.95" id="aEa-Bp-LE5"/>
+                    <constraint firstItem="Wc0-Hr-kgC" firstAttribute="height" secondItem="QhW-EZ-JvY" secondAttribute="height" id="tlL-wO-CNO"/>
+                    <constraint firstItem="QhW-EZ-JvY" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.25" id="vC8-nK-1XJ"/>
+                    <constraint firstItem="LF2-Ye-0F5" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="1.95" id="xeP-1z-8zM"/>
+                    <constraint firstItem="ewm-DK-dUr" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.25" id="xw1-2n-8cW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="currentOwner" destination="acV-gc-QOu" id="MKl-2m-WOD"/>
+                <outlet property="previousOwner" destination="Wc0-Hr-kgC" id="HDo-ed-mRB"/>
+                <outlet property="transactionDate" destination="ewm-DK-dUr" id="OMi-yP-Umx"/>
+            </connections>
+            <point key="canvasLocation" x="67" y="88.5"/>
+        </tableViewCell>
+    </objects>
+</document>

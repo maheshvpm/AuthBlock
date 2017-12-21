@@ -11,5 +11,6 @@
 @interface ABParser : NSObject
 
 - ( NSMutableArray * )parseProductList:( NSDictionary * )response;
+- ( NSMutableArray * )parseTransactionHistory:( NSDictionary * )response;
 
 @end

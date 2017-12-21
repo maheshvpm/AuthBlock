@@ -35,4 +35,19 @@
     return products;
 }
 
+- ( NSMutableArray * )parseTransactionHistory:( NSDictionary * )response
+{
+    NSMutableArray *historyList = [[NSMutableArray alloc]init];
+    
+    if ( response )
+    {
+        for (NSDictionary *dict in response)
+        {
+            ABHistory *history = [[ABHistory alloc]init];
+            history.transactionDate = dict[@"timestamp"];
+            [historyList addObject:history];
+        }
+    }
+    return historyList;
+}
 @end

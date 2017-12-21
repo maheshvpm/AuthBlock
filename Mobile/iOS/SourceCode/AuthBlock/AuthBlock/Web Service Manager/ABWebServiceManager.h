@@ -13,8 +13,12 @@
 
 typedef void (^WebServiceFailureResponse)( ABError *error );
 typedef void (^ProductListResponse)( NSMutableArray *products );
+typedef void (^TransactionsResponse)( NSMutableArray *transactions );
 
 - ( void )getProductsWithSccessResponse:( ProductListResponse )products
                     withFailureResponse:( WebServiceFailureResponse )failure;
+
+- ( void )getTransactionsWithSuccessResponse:( TransactionsResponse )transactions
+                         withFailureResponse:( WebServiceFailureResponse )failure;
 
 @end

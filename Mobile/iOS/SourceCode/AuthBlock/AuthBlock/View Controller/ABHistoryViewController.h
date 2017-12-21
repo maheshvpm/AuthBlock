@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ABHistoryViewController : UIViewController
+@interface ABHistoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+@property (weak, nonatomic) IBOutlet UITableView *historyTableView;
 
 @end
