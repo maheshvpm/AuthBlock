@@ -14,8 +14,7 @@
 typedef void (^WebServiceFailureResponse)( ABError *error );
 typedef void (^ProductListResponse)( NSMutableArray *products );
 
-- ( void )getProducts:( NSString * )urlString
-   withSccessResponse:( ProductListResponse )products
-  withFailureResponse:( WebServiceFailureResponse )error;
+- ( void )getProductsWithSccessResponse:( ProductListResponse )products
+                    withFailureResponse:( WebServiceFailureResponse )failure;
 
 @end

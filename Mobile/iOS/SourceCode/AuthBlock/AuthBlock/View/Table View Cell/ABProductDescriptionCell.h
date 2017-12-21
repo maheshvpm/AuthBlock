@@ -10,4 +10,8 @@
 
 @interface ABProductDescriptionCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *productTitle;
+@property (weak, nonatomic) IBOutlet UILabel *rating;
+@property (weak, nonatomic) IBOutlet UILabel *productPrice;
+
 @end

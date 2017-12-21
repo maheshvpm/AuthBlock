@@ -9,10 +9,14 @@
 #import "ABProductDetailViewController.h"
 #import "ABProductDetailImageCell.h"
 #import "ABProductDescriptionCell.h"
+#import "ABSellerInfoCell.h"
+#import "ABCertificationCell.h"
 
 typedef NS_ENUM(NSInteger, ProductDetailSections) {
     ProductImage,
-    ProductDescription
+    ProductDescription,
+    SellerInfo,
+    Certification
 };
 
 @interface ABProductDetailViewController ()
@@ -34,7 +38,7 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
 
 //MARK:- Tableview Datasource and Delegates
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -46,10 +50,43 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
         case ProductImage:
             return self.view.frame.size.height * 0.4;
         case ProductDescription:
-            return self.view.frame.size.height * 0.2;
+            return self.view.frame.size.height * 0.15;
+        case SellerInfo:
+            return self.view.frame.size.height * 0.15;
+        case Certification:
+            return self.view.frame.size.height * 0.1;
         default:
             return 0;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case SellerInfo:
+            return 50;
+        default:
+            return 0.1;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case SellerInfo: {
+            UIView *headerView =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 50)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, tableView.frame.size.width, 50)];
+            [label setFont:[UIFont boldSystemFontOfSize:18]];
+            NSString *string =@"SELLER INFO";
+            [label setText:string];
+            [headerView addSubview:label];
+            return headerView;
+        }
+        default:
+            return nil;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -66,6 +103,26 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
         case ProductDescription: {
             static NSString *identifier = @"ABProductDescriptionCell";
             ABProductDescriptionCell *cell = (ABProductDescriptionCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+            if (cell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            cell.productTitle.text = self.product.productName;
+            cell.productPrice.text = [NSString stringWithFormat:@"%@",self.product.productPrice];
+            return cell;
+        }
+        case SellerInfo: {
+            static NSString *identifier = @"ABSellerInfoCell";
+            ABSellerInfoCell *cell = (ABSellerInfoCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+            if (cell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            return cell;
+        }
+        case Certification: {
+            static NSString *identifier = @"ABCertificationCell";
+            ABCertificationCell *cell = (ABCertificationCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
             if (cell == nil) {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
                 cell = [nib objectAtIndex:0];

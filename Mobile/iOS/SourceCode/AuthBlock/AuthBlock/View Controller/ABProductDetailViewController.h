@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABProduct.h"
 
 @interface ABProductDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *productDetailTableView;
 
+@property ( nonatomic, strong ) ABProduct *product;
 
 @end

@@ -13,6 +13,10 @@
 		18DD177B1FEB93710006FE20 /* ABProductDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD17791FEB93710006FE20 /* ABProductDescriptionCell.xib */; };
 		18DD177E1FEB978F0006FE20 /* certified.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DD177C1FEB978F0006FE20 /* certified.png */; };
 		18DD177F1FEB978F0006FE20 /* rating.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DD177D1FEB978F0006FE20 /* rating.png */; };
+		18DD17831FEBB0320006FE20 /* ABSellerInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD17811FEBB0320006FE20 /* ABSellerInfoCell.m */; };
+		18DD17841FEBB0320006FE20 /* ABSellerInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD17821FEBB0320006FE20 /* ABSellerInfoCell.xib */; };
+		18DD17881FEBB4630006FE20 /* ABCertificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD17861FEBB4630006FE20 /* ABCertificationCell.m */; };
+		18DD17891FEBB4630006FE20 /* ABCertificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD17871FEBB4630006FE20 /* ABCertificationCell.xib */; };
 		18F239201FE91D2100BBA1AE /* ABProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2391F1FE91D2100BBA1AE /* ABProductDetailViewController.m */; };
 		18F239241FE91E5600BBA1AE /* ABProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F239211FE91E5600BBA1AE /* ABProductListCell.m */; };
 		18F239251FE91E5600BBA1AE /* ABProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F239221FE91E5600BBA1AE /* ABProductListCell.xib */; };
@@ -81,6 +85,12 @@
 		18DD17791FEB93710006FE20 /* ABProductDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ABProductDescriptionCell.xib; sourceTree = "<group>"; };
 		18DD177C1FEB978F0006FE20 /* certified.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = certified.png; sourceTree = "<group>"; };
 		18DD177D1FEB978F0006FE20 /* rating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rating.png; sourceTree = "<group>"; };
+		18DD17801FEBB0320006FE20 /* ABSellerInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABSellerInfoCell.h; sourceTree = "<group>"; };
+		18DD17811FEBB0320006FE20 /* ABSellerInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABSellerInfoCell.m; sourceTree = "<group>"; };
+		18DD17821FEBB0320006FE20 /* ABSellerInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ABSellerInfoCell.xib; sourceTree = "<group>"; };
+		18DD17851FEBB4630006FE20 /* ABCertificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCertificationCell.h; sourceTree = "<group>"; };
+		18DD17861FEBB4630006FE20 /* ABCertificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCertificationCell.m; sourceTree = "<group>"; };
+		18DD17871FEBB4630006FE20 /* ABCertificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ABCertificationCell.xib; sourceTree = "<group>"; };
 		18F2391E1FE91D2000BBA1AE /* ABProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABProductDetailViewController.h; sourceTree = "<group>"; };
 		18F2391F1FE91D2100BBA1AE /* ABProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABProductDetailViewController.m; sourceTree = "<group>"; };
 		18F239211FE91E5600BBA1AE /* ABProductListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABProductListCell.m; sourceTree = "<group>"; };
@@ -239,6 +249,12 @@
 				18DD17771FEB93710006FE20 /* ABProductDescriptionCell.h */,
 				18DD17781FEB93710006FE20 /* ABProductDescriptionCell.m */,
 				18DD17791FEB93710006FE20 /* ABProductDescriptionCell.xib */,
+				18DD17801FEBB0320006FE20 /* ABSellerInfoCell.h */,
+				18DD17811FEBB0320006FE20 /* ABSellerInfoCell.m */,
+				18DD17821FEBB0320006FE20 /* ABSellerInfoCell.xib */,
+				18DD17851FEBB4630006FE20 /* ABCertificationCell.h */,
+				18DD17861FEBB4630006FE20 /* ABCertificationCell.m */,
+				18DD17871FEBB4630006FE20 /* ABCertificationCell.xib */,
 			);
 			path = "Table View Cell";
 			sourceTree = "<group>";
@@ -561,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB29A4A1FE5684B003A5AB2 /* LaunchScreen.storyboard in Resources */,
+				18DD17891FEBB4630006FE20 /* ABCertificationCell.xib in Resources */,
 				18F239251FE91E5600BBA1AE /* ABProductListCell.xib in Resources */,
 				18DD177F1FEB978F0006FE20 /* rating.png in Resources */,
 				EAB29A471FE5684B003A5AB2 /* Assets.xcassets in Resources */,
@@ -571,6 +588,7 @@
 				4A3448931FE9119700C2B2D8 /* QR Code@2x.png in Resources */,
 				4A3448951FE9119700C2B2D8 /* home.png in Resources */,
 				18DD17761FEB8F2D0006FE20 /* ABProductDetailImageCell.xib in Resources */,
+				18DD17841FEBB0320006FE20 /* ABSellerInfoCell.xib in Resources */,
 				18DD177B1FEB93710006FE20 /* ABProductDescriptionCell.xib in Resources */,
 				4A3448941FE9119700C2B2D8 /* logout.png in Resources */,
 				4A3448991FE916D900C2B2D8 /* menu@2x.png in Resources */,
@@ -749,6 +767,7 @@
 				EAB29AB01FE571A1003A5AB2 /* ABLogin.m in Sources */,
 				EAB29A951FE56C4A003A5AB2 /* ABWebServiceManager.m in Sources */,
 				4A3448861FE90DF500C2B2D8 /* ABProductListViewController.m in Sources */,
+				18DD17831FEBB0320006FE20 /* ABSellerInfoCell.m in Sources */,
 				4A34488D1FE90F3F00C2B2D8 /* ABMenuTableViewController.m in Sources */,
 				4A11ED051FEA33D500AE41AF /* ABHistoryViewController.m in Sources */,
 				18F239201FE91D2100BBA1AE /* ABProductDetailViewController.m in Sources */,
@@ -756,6 +775,7 @@
 				EAB29AB31FE571B9003A5AB2 /* ABError.m in Sources */,
 				EAB29AAD1FE57181003A5AB2 /* ABHistory.m in Sources */,
 				4A3448811FE90A0500C2B2D8 /* ABLoginViewController.m in Sources */,
+				18DD17881FEBB4630006FE20 /* ABCertificationCell.m in Sources */,
 				EAB29A8E1FE5693B003A5AB2 /* AppDelegate.m in Sources */,
 				EAB29A4D1FE5684B003A5AB2 /* main.m in Sources */,
 				EAB29AA11FE56DE6003A5AB2 /* ABActivityIndicator.m in Sources */,
