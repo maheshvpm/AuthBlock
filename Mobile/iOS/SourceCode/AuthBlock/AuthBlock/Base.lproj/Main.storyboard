@@ -481,7 +481,7 @@
         <!--Product Detail-->
         <scene sceneID="6MX-Rk-Bp2">
             <objects>
-                <viewController storyboardIdentifier="productDetailViewController" title="Product Detail" id="L9J-TV-L2P" customClass="ABProductDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="productDetailViewController" title="Product Detail" automaticallyAdjustsScrollViewInsets="NO" id="L9J-TV-L2P" customClass="ABProductDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S7c-9h-PSa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -510,7 +510,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OdJ-kR-djU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TFt-gI-d0P">
+                    <navigationItem key="navigationItem" title="Product Details" id="TFt-gI-d0P">
                         <barButtonItem key="rightBarButtonItem" image="share_icon.png" id="ZFJ-8z-tTL">
                             <connections>
                                 <action selector="shareAction:" destination="L9J-TV-L2P" id="wid-Ma-jy8"/>
