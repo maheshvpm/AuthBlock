@@ -46,6 +46,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmD-No-aMm">
+                        <rect key="frame" x="440" y="97" width="69" height="30"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <state key="normal" title="  VERIFY  ">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="verifyBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="M7D-BW-cJy"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Iri-p2-BjO" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.5" id="2Kj-Kq-JIF"/>
@@ -57,8 +68,10 @@
                     <constraint firstItem="6dg-Pe-mpF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="1.5" id="XNp-hh-K6W"/>
                     <constraint firstItem="6dg-Pe-mpF" firstAttribute="leading" secondItem="Iri-p2-BjO" secondAttribute="leading" id="Yzc-n5-C9u"/>
                     <constraint firstItem="eML-7b-QCO" firstAttribute="centerY" secondItem="6dg-Pe-mpF" secondAttribute="centerY" id="aGM-FN-x9a"/>
+                    <constraint firstItem="VmD-No-aMm" firstAttribute="centerY" secondItem="eML-7b-QCO" secondAttribute="centerY" id="hVN-7c-t5C"/>
                     <constraint firstItem="l2r-sw-oUu" firstAttribute="centerY" secondItem="Iri-p2-BjO" secondAttribute="centerY" id="pdc-Dc-cAR"/>
                     <constraint firstItem="Iri-p2-BjO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="0.05" id="pyw-wi-uac"/>
+                    <constraint firstItem="VmD-No-aMm" firstAttribute="trailing" secondItem="l2r-sw-oUu" secondAttribute="trailing" id="vtB-IX-Ijd"/>
                     <constraint firstItem="Iri-p2-BjO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.05" id="xqY-aA-yAl"/>
                 </constraints>
             </tableViewCellContentView>
@@ -67,6 +80,7 @@
                 <outlet property="productPrice" destination="l2r-sw-oUu" id="fnq-ah-JxJ"/>
                 <outlet property="productTitle" destination="Iri-p2-BjO" id="pcy-LT-eqw"/>
                 <outlet property="rating" destination="6dg-Pe-mpF" id="aLC-Wf-zvi"/>
+                <outlet property="verifyBtn" destination="VmD-No-aMm" id="BIU-qx-2rm"/>
             </connections>
             <point key="canvasLocation" x="126" y="59.5"/>
         </tableViewCell>

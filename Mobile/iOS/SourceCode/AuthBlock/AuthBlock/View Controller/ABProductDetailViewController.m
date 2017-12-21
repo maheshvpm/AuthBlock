@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
     Certification
 };
 
-@interface ABProductDetailViewController ()
+@interface ABProductDetailViewController () <ABProductVerifyDelegate>
 
 @end
 
@@ -37,6 +37,15 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
 }
 
 - (IBAction)shareAction:(id)sender {
+    if (self.product != nil) {
+        NSString *title = self.product.productName;
+        NSURL *imageURL = [NSURL URLWithString:self.product.productImageURL];
+        NSArray *objectsToShare = @[title, imageURL];
+    
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+        activityVC.popoverPresentationController.sourceView = self.view;
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
 }
 
 //MARK:- Tableview Datasource and Delegates
@@ -111,6 +120,7 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
                 cell = [nib objectAtIndex:0];
             }
+            cell.delegate = self;
             cell.productTitle.text = self.product.productName;
             cell.productPrice.text = [NSString stringWithFormat:@"%@",self.product.productPrice];
             return cell;
@@ -138,6 +148,10 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
             return cell;
         }
     }
+}
+
+-(void)verifyProduct:(NSString *)productId {
+    NSLog(@"Verify product for product id:%@", productId);
 }
 
 @end
