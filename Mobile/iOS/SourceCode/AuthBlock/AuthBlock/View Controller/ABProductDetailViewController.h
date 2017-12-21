@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ABProduct.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ABProductDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *productDetailTableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareBtn;
 
 @property ( nonatomic, strong ) ABProduct *product;
 

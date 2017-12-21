@@ -36,6 +36,9 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)shareAction:(id)sender {
+}
+
 //MARK:- Tableview Datasource and Delegates
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
@@ -98,6 +101,7 @@ typedef NS_ENUM(NSInteger, ProductDetailSections) {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
                 cell = [nib objectAtIndex:0];
             }
+            [cell.imageView setImageWithURL:[NSURL URLWithString:self.product.productImageURL]];
             return cell;
         }
         case ProductDescription: {

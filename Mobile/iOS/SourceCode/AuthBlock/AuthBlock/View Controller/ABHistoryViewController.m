@@ -90,7 +90,7 @@
  */
 - ( void )readerDidScanResult:( NSString * )result
 {
-    
+    NSLog(@"Scan Result: %@",result);
     // Pop QR code reader view controller.
     [self.navigationController popViewControllerAnimated:YES];
 }
