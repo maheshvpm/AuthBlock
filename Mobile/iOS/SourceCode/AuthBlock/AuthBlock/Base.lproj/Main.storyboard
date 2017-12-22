@@ -512,7 +512,7 @@
         <!--Transactions-->
         <scene sceneID="uM9-nC-fj9">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="NUC-lX-9u6" customClass="ABHistoryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ABHistoryViewController" automaticallyAdjustsScrollViewInsets="NO" id="NUC-lX-9u6" customClass="ABHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OwE-g1-JoI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

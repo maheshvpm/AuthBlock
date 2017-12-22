@@ -13,6 +13,7 @@
 #import "ABCertificationCell.h"
 #import "ABWebServiceManager.h"
 #import "ABActivityIndicator.h"
+#import "ABHistoryViewController.h"
 
 typedef NS_ENUM( NSInteger, ProductDetailSections ) {
     ProductImage,
@@ -46,6 +47,12 @@ typedef NS_ENUM( NSInteger, ProductDetailSections ) {
     self.productDetailTableView.dataSource = self;
     self.productDetailTableView.delegate = self;
     self.productDetailTableView.backgroundColor = [UIColor clearColor];
+    
+    // Get the seller id
+    NSArray *array = [self.product.productHolder componentsSeparatedByString:@"#"];
+    if (array.count > 1) {
+        [self getSellerInformation:[array objectAtIndex:1]];
+    }
 }
 
 - ( void )didReceiveMemoryWarning
@@ -180,6 +187,8 @@ heightForFooterInSection:( NSInteger )section
                 cell.backgroundColor = [UIColor clearColor];
                 cell.contentView.backgroundColor = [UIColor clearColor];
             }
+            cell.sellerName.text = [NSString stringWithFormat:@"%@ %@",self.sellerInfo.firstname,self.sellerInfo.lastname];
+            cell.sellerRating.text =[NSString stringWithFormat:@"%@",self.sellerInfo.userRating];
             return cell;
         }
         case Certification:
@@ -207,6 +216,35 @@ heightForFooterInSection:( NSInteger )section
 -( void )verifyProduct:( NSString * )productId
 {
     NSLog(@"Verify product for product id:%@", productId);
+    ABHistoryViewController *historyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ABHistoryViewController"];
+    [self.navigationController pushViewController:historyViewController animated:YES];
+}
+
+-( void )getSellerInformation:(NSString *)userId {
+    
+    [self.serviceManager getSellerInfo:userId WithSuccessResponse:^(ABUser *user)  {
+        self.sellerInfo = user;
+        [self.productDetailTableView reloadData];
+    } withFailureResponse:^(ABError *error) {
+        
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@"Error"
+                                     message:error.errorMessage
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        //Add Buttons
+        UIAlertAction* noButton = [UIAlertAction
+                                   actionWithTitle:@"Cancel"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle no, thanks button
+                                   }];
+        
+        //Add your buttons to alert controller
+        [alert addAction:noButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 @end

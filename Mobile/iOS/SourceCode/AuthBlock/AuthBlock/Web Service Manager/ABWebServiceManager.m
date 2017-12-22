@@ -83,4 +83,39 @@
     [dataTask resume];
 }
 
+- ( void )getSellerInfo:(NSString *)userId WithSuccessResponse:( SellerInformation )info
+                         withFailureResponse:( WebServiceFailureResponse )failure
+{
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/html", @"text/json",@"application/x-www-form-urlencoded",nil];
+    
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@User/%@",KBaseURL,userId]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    
+    [request addValue:@"identity" forHTTPHeaderField:@"Accept-Encoding"];
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            ABError * serviceError = [[ABError alloc]init];
+            serviceError.errorMessage = [error localizedDescription];
+            serviceError.errorCode = [error code];
+            failure(serviceError);
+        } else {
+            ABParser *parser = [[ABParser alloc]init];
+            ABUser *user = [parser parseSellerInfo:responseObject];
+            info(user);
+        }
+    }];
+    [dataTask resume];
+}
+
+
 @end

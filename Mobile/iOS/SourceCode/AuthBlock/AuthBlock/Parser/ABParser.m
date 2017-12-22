@@ -50,4 +50,19 @@
     }
     return historyList;
 }
+
+- ( ABUser * )parseSellerInfo:( NSDictionary * )response
+{
+    ABUser *user = [[ABUser alloc]init];
+    if ( response )
+    {
+        user.email = response[@"email"];
+        user.firstname = response[@"firstName"];
+        user.lastname = response[@"lastname"];
+        user.role = response[@"role"];
+        user.userRating = response[@"user_rating"];
+        user.userId = response[@"userId"];
+    }
+    return user;
+}
 @end

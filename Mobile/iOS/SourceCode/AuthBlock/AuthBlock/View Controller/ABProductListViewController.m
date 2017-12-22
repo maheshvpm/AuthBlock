@@ -150,7 +150,7 @@
         product = self.products[indexPath.row];
         cell.productTitle.text = product.productName;
         cell.productDescription.text = product.productDescription;
-        cell.productPrice.text = [ NSString stringWithFormat:@"%@",product.productPrice];
+        cell.productPrice.text = [ NSString stringWithFormat:@"₹ %@",product.productPrice];
         [cell.productImageView setImageWithURL:[NSURL URLWithString:product.productImageURL]];
     
 //        cell.productTitle.text = @"Kohinoor Diamond";

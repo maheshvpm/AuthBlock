@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eML-7b-QCO">
-                        <rect key="frame" x="46.5" y="99.5" width="25" height="25"/>
+                        <rect key="frame" x="51.5" y="99.5" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="qqr-Sk-DHm"/>
                             <constraint firstAttribute="width" constant="25" id="y02-S7-rz1"/>
@@ -63,7 +63,7 @@
                     <constraint firstItem="Iri-p2-BjO" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.7" id="4hp-uU-iKg"/>
                     <constraint firstItem="l2r-sw-oUu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.95" id="5cW-HF-K7f"/>
                     <constraint firstItem="l2r-sw-oUu" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.3" id="7bT-xr-evA"/>
-                    <constraint firstItem="eML-7b-QCO" firstAttribute="leading" secondItem="6dg-Pe-mpF" secondAttribute="trailing" constant="5" id="Bkn-Q4-SB8"/>
+                    <constraint firstItem="eML-7b-QCO" firstAttribute="leading" secondItem="6dg-Pe-mpF" secondAttribute="trailing" constant="10" id="Bkn-Q4-SB8"/>
                     <constraint firstItem="l2r-sw-oUu" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="WH7-dO-Tdi"/>
                     <constraint firstItem="6dg-Pe-mpF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="1.5" id="XNp-hh-K6W"/>
                     <constraint firstItem="6dg-Pe-mpF" firstAttribute="leading" secondItem="Iri-p2-BjO" secondAttribute="leading" id="Yzc-n5-C9u"/>

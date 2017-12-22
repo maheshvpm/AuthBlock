@@ -20,6 +20,7 @@
 		18DD178B1FEBD91D0006FE20 /* share_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DD178A1FEBD91C0006FE20 /* share_icon.png */; };
 		18DD178F1FEC4D280006FE20 /* ABTransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD178D1FEC4D280006FE20 /* ABTransactionCell.m */; };
 		18DD17901FEC4D280006FE20 /* ABTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD178E1FEC4D280006FE20 /* ABTransactionCell.xib */; };
+		18DD17921FECE5FE0006FE20 /* BlockChainLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DD17911FECE5FE0006FE20 /* BlockChainLogo.png */; };
 		18F239201FE91D2100BBA1AE /* ABProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2391F1FE91D2100BBA1AE /* ABProductDetailViewController.m */; };
 		18F239241FE91E5600BBA1AE /* ABProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F239211FE91E5600BBA1AE /* ABProductListCell.m */; };
 		18F239251FE91E5600BBA1AE /* ABProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F239221FE91E5600BBA1AE /* ABProductListCell.xib */; };
@@ -103,6 +104,7 @@
 		18DD178C1FEC4D270006FE20 /* ABTransactionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABTransactionCell.h; sourceTree = "<group>"; };
 		18DD178D1FEC4D280006FE20 /* ABTransactionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABTransactionCell.m; sourceTree = "<group>"; };
 		18DD178E1FEC4D280006FE20 /* ABTransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ABTransactionCell.xib; sourceTree = "<group>"; };
+		18DD17911FECE5FE0006FE20 /* BlockChainLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlockChainLogo.png; sourceTree = "<group>"; };
 		18F2391E1FE91D2000BBA1AE /* ABProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABProductDetailViewController.h; sourceTree = "<group>"; };
 		18F2391F1FE91D2100BBA1AE /* ABProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABProductDetailViewController.m; sourceTree = "<group>"; };
 		18F239211FE91E5600BBA1AE /* ABProductListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABProductListCell.m; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		4A34487A1FE9087700C2B2D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				18DD17911FECE5FE0006FE20 /* BlockChainLogo.png */,
 				4A91B0B81FEC408A00A59C4F /* profile.png */,
 				4A91B0B91FEC408A00A59C4F /* share_icon@2x.png */,
 				4A91B0AA1FEBF5F000A59C4F /* about.png */,
@@ -625,6 +628,7 @@
 				18DD177B1FEB93710006FE20 /* ABProductDescriptionCell.xib in Resources */,
 				4A91B0AC1FEBF5F000A59C4F /* about.png in Resources */,
 				4A3448941FE9119700C2B2D8 /* logout.png in Resources */,
+				18DD17921FECE5FE0006FE20 /* BlockChainLogo.png in Resources */,
 				4A3448991FE916D900C2B2D8 /* menu@2x.png in Resources */,
 				4A3448831FE90BDB00C2B2D8 /* Bg.png in Resources */,
 				EAB29A451FE5684B003A5AB2 /* Main.storyboard in Resources */,

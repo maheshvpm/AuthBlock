@@ -10,4 +10,7 @@
 
 @interface ABSellerInfoCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *sellerName;
+@property (weak, nonatomic) IBOutlet UILabel *sellerRating;
+
 @end

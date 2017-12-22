@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ABUser.h"
 
 @interface ABParser : NSObject
 
 - ( NSMutableArray * )parseProductList:( NSDictionary * )response;
 - ( NSMutableArray * )parseTransactionHistory:( NSDictionary * )response;
+- ( ABUser * )parseSellerInfo:( NSDictionary * )response;
 
 @end

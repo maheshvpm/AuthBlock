@@ -26,12 +26,12 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="URR-YF-ep2">
-                        <rect key="frame" x="113" y="5" width="96.5" height="92"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlockChainLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="URR-YF-ep2">
+                        <rect key="frame" x="113" y="5" width="230" height="92"/>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="URR-YF-ep2" firstAttribute="width" secondItem="0zo-No-NhO" secondAttribute="width" id="FR2-th-Wmk"/>
+                    <constraint firstItem="URR-YF-ep2" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="1J4-cr-v9P"/>
                     <constraint firstItem="URR-YF-ep2" firstAttribute="leading" secondItem="0zo-No-NhO" secondAttribute="trailing" constant="5" id="MkY-9G-6Dv"/>
                     <constraint firstItem="0zo-No-NhO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.05" id="ZWO-VZ-Tp6"/>
                     <constraint firstItem="0zo-No-NhO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bRf-2A-JSL"/>
@@ -44,4 +44,7 @@
             <point key="canvasLocation" x="96" y="81.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="BlockChainLogo.png" width="341" height="100"/>
+    </resources>
 </document>

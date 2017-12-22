@@ -11,7 +11,8 @@
 @interface ABTransactionCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *transactionDate;
-@property (weak, nonatomic) IBOutlet UILabel *previousOwner;
-@property (weak, nonatomic) IBOutlet UILabel *currentOwner;
+@property (weak, nonatomic) IBOutlet UILabel *productName;
+@property (weak, nonatomic) IBOutlet UILabel *sellerName;
+@property (weak, nonatomic) IBOutlet UILabel *price;
 
 @end
