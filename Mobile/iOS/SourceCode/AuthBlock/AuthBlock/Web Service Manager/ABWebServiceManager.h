@@ -16,6 +16,7 @@ typedef void (^WebServiceFailureResponse)( ABError *error );
 typedef void (^ProductListResponse)( NSMutableArray *products );
 typedef void (^TransactionsResponse)( NSMutableArray *transactions );
 typedef void (^SellerInformation)( ABUser *user );
+typedef void (^VerifyResponse)(void);
 
 - ( void )getProductsWithSccessResponse:( ProductListResponse )products
                     withFailureResponse:( WebServiceFailureResponse )failure;
@@ -27,5 +28,9 @@ typedef void (^SellerInformation)( ABUser *user );
 - ( void )getSellerInfo:( NSString * )userId
     withSuccessResponse:( SellerInformation )info
     withFailureResponse:( WebServiceFailureResponse )failure;
+
+- ( void ) verifyProduct:( NSString * ) productId
+     withSuccessResponse:( VerifyResponse )success
+     withFailureResponse:(WebServiceFailureResponse )failure;
 
 @end

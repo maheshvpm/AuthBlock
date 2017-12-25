@@ -216,10 +216,20 @@ heightForFooterInSection:( NSInteger )section
 
 -( void )verifyProduct:( NSString * )productId
 {
-    NSLog(@"Verify product for product id:%@", productId);
-    ABHistoryViewController *historyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ABHistoryViewController"];
-    historyViewController.productID = [NSString stringWithFormat:@"%@",_product.produdtId];
-    [self.navigationController pushViewController:historyViewController animated:YES];
+    [self.activityIndicator showActivityIndicator];
+    [ self.serviceManager verifyProduct:[NSString stringWithFormat:@"%@",_product.produdtId] withSuccessResponse:^{
+        
+        [self.activityIndicator stopActivityIndicator];
+        ABHistoryViewController *historyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ABHistoryViewController"];
+        historyViewController.productID = [NSString stringWithFormat:@"%@",_product.produdtId];
+        [self.navigationController pushViewController:historyViewController animated:YES];
+    } withFailureResponse:^(ABError *error) {
+        
+        [self.activityIndicator stopActivityIndicator];
+        ABHistoryViewController *historyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ABHistoryViewController"];
+        historyViewController.productID = [NSString stringWithFormat:@"%@",_product.produdtId];
+        [self.navigationController pushViewController:historyViewController animated:YES];
+    }];
 }
 
 -( void )getSellerInformation:(NSString *)userId {

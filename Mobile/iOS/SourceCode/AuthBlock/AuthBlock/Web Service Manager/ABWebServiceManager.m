@@ -132,5 +132,37 @@
     [dataTask resume];
 }
 
+- ( void ) verifyProduct:( NSString * ) productId
+     withSuccessResponse:( VerifyResponse )success
+     withFailureResponse:(WebServiceFailureResponse )failure
+{
+    NSDictionary *params = @{@"currentProduct": [NSString stringWithFormat: @"resource:org.aspiresys.authblock.Product#%@",productId]};
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+
+    AFSecurityPolicy* policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+
+    [policy setValidatesDomainName:NO];
+
+    [policy setAllowInvalidCertificates:YES];
+
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/html", @"text/json",@"application/x-www-form-urlencoded",nil];
+
+    [manager.requestSerializer setValue:@"identity" forHTTPHeaderField:@"Accept-Encoding"];
+
+    [manager POST:[NSString stringWithFormat:@"%@UserRating",KBaseURL] parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+
+        success();
+    }
+          failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         ABError * serviceError = [[ABError alloc]init];
+         serviceError.errorMessage = [error localizedDescription];
+         serviceError.errorCode = [error code];
+         failure(serviceError);
+     }];
+}
 
 @end
