@@ -20,10 +20,12 @@ typedef void (^SellerInformation)( ABUser *user );
 - ( void )getProductsWithSccessResponse:( ProductListResponse )products
                     withFailureResponse:( WebServiceFailureResponse )failure;
 
-- ( void )getTransactionsWithSuccessResponse:( TransactionsResponse )transactions
-                         withFailureResponse:( WebServiceFailureResponse )failure;
+- ( void )getTransactions:( NSString * )productID
+      withSuccessResponse:( TransactionsResponse )transactions
+      withFailureResponse:( WebServiceFailureResponse )failure;
 
-- ( void )getSellerInfo:(NSString *)userId WithSuccessResponse:( SellerInformation )info
-                       withFailureResponse:( WebServiceFailureResponse )failure;
+- ( void )getSellerInfo:( NSString * )userId
+    withSuccessResponse:( SellerInformation )info
+    withFailureResponse:( WebServiceFailureResponse )failure;
 
 @end

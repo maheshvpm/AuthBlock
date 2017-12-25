@@ -119,7 +119,7 @@
 - ( CGFloat )tableView:( UITableView * )tableView heightForRowAtIndexPath:( NSIndexPath * )indexPath
 {
     if ( self.products.count > 0 ) {
-        return self.view.frame.size.height * 0.2;
+        return 138;
     }
     return self.view.frame.size.height * 0.1;
 }
@@ -150,7 +150,7 @@
         product = self.products[indexPath.row];
         cell.productTitle.text = product.productName;
         cell.productDescription.text = product.productDescription;
-        cell.productPrice.text = [ NSString stringWithFormat:@"₹ %@",product.productPrice];
+        cell.productPrice.text = [ NSString stringWithFormat:@"$ %@",product.productPrice];
         [cell.productImageView setImageWithURL:[NSURL URLWithString:product.productImageURL]];
     
 //        cell.productTitle.text = @"Kohinoor Diamond";

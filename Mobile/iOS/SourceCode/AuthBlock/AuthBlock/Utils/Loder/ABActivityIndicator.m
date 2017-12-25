@@ -25,7 +25,7 @@
 
     self.indicator.alpha = 0.9;
 
-    self.activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor whiteColor] size:40.0f];
+    self.activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingTrigons tintColor:[UIColor whiteColor] size:40.0f];
     self.activityIndicatorView.frame = CGRectMake((delegate.window.frame.size.width/2)-25, (delegate.window.frame.size.height/2)-25, 50.0f, 50.0f);
 
     [delegate.window addSubview:self.indicator];

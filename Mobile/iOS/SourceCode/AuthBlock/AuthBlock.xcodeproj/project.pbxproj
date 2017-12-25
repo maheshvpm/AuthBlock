@@ -45,6 +45,9 @@
 		4A91B0B71FEC2FD200A59C4F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A91B0B61FEC2FD200A59C4F /* MessageUI.framework */; };
 		4A91B0BA1FEC408B00A59C4F /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A91B0B81FEC408A00A59C4F /* profile.png */; };
 		4A91B0BB1FEC408B00A59C4F /* share_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A91B0B91FEC408A00A59C4F /* share_icon@2x.png */; };
+		4AC886B01FEF918800A91027 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC886AF1FEF918800A91027 /* logo.png */; };
+		4AC886B31FEF98B600A91027 /* Tx_fail.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC886B11FEF98B600A91027 /* Tx_fail.png */; };
+		4AC886B41FEF98B600A91027 /* Tx_success.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC886B21FEF98B600A91027 /* Tx_success.png */; };
 		E55AE0C2614415D0F654D082 /* libPods-AuthBlockUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 787DCC1109D84F0A213BEFAC /* libPods-AuthBlockUITests.a */; };
 		EAB29A451FE5684B003A5AB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB29A431FE5684B003A5AB2 /* Main.storyboard */; };
 		EAB29A471FE5684B003A5AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB29A461FE5684B003A5AB2 /* Assets.xcassets */; };
@@ -140,6 +143,9 @@
 		4A91B0B61FEC2FD200A59C4F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4A91B0B81FEC408A00A59C4F /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		4A91B0B91FEC408A00A59C4F /* share_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_icon@2x.png"; sourceTree = "<group>"; };
+		4AC886AF1FEF918800A91027 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		4AC886B11FEF98B600A91027 /* Tx_fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tx_fail.png; sourceTree = "<group>"; };
+		4AC886B21FEF98B600A91027 /* Tx_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tx_success.png; sourceTree = "<group>"; };
 		4AEA5C3D3D61D06B02AD2A6D /* Pods-AuthBlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthBlock.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthBlock/Pods-AuthBlock.release.xcconfig"; sourceTree = "<group>"; };
 		63FA5E44F6F99B22283368AA /* Pods-AuthBlockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthBlockUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthBlockUITests/Pods-AuthBlockUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		787DCC1109D84F0A213BEFAC /* libPods-AuthBlockUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AuthBlockUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +241,9 @@
 		4A34487A1FE9087700C2B2D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4AC886B11FEF98B600A91027 /* Tx_fail.png */,
+				4AC886B21FEF98B600A91027 /* Tx_success.png */,
+				4AC886AF1FEF918800A91027 /* logo.png */,
 				18DD17931FED33820006FE20 /* Splash.png */,
 				18DD17911FECE5FE0006FE20 /* BlockChainLogo.png */,
 				4A91B0B81FEC408A00A59C4F /* profile.png */,
@@ -611,6 +620,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC886B01FEF918800A91027 /* logo.png in Resources */,
 				EAB29A4A1FE5684B003A5AB2 /* LaunchScreen.storyboard in Resources */,
 				18DD17891FEBB4630006FE20 /* ABCertificationCell.xib in Resources */,
 				18F239251FE91E5600BBA1AE /* ABProductListCell.xib in Resources */,
@@ -621,11 +631,13 @@
 				18DD17901FEC4D280006FE20 /* ABTransactionCell.xib in Resources */,
 				18DD177E1FEB978F0006FE20 /* certified.png in Resources */,
 				4A3448921FE9119700C2B2D8 /* QR Code.png in Resources */,
+				4AC886B31FEF98B600A91027 /* Tx_fail.png in Resources */,
 				4A3448931FE9119700C2B2D8 /* QR Code@2x.png in Resources */,
 				4A3448951FE9119700C2B2D8 /* home.png in Resources */,
 				4A91B0BB1FEC408B00A59C4F /* share_icon@2x.png in Resources */,
 				18DD17761FEB8F2D0006FE20 /* ABProductDetailImageCell.xib in Resources */,
 				4A91B0AB1FEBF5F000A59C4F /* Placeholder.png in Resources */,
+				4AC886B41FEF98B600A91027 /* Tx_success.png in Resources */,
 				4A91B0BA1FEC408B00A59C4F /* profile.png in Resources */,
 				18DD17841FEBB0320006FE20 /* ABSellerInfoCell.xib in Resources */,
 				18DD177B1FEB93710006FE20 /* ABProductDescriptionCell.xib in Resources */,

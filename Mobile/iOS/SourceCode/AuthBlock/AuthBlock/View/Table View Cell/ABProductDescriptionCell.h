@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *verifyBtn;
 
 @property (nonatomic, weak) id <ABProductVerifyDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UILabel *productDesciption;
 
 @end

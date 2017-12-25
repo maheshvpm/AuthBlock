@@ -11,11 +11,13 @@
 #import "ABQRCodeReaderViewController.h"
 #import "ABTransactionCell.h"
 #import "ABWebServiceManager.h"
+#import "ABHistory.h"
+#import "ABActivityIndicator.h"
 
 @interface ABHistoryViewController ()<ABQRCodeReaderDelegate>
 
-@property ( nonatomic, strong )NSMutableArray *transactions;
 @property ( nonatomic, strong )ABWebServiceManager *serviceManager;
+@property ( nonatomic, strong )ABActivityIndicator *activityIndicator;
 
 @end
 
@@ -32,14 +34,18 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 
     self.serviceManager = [[ABWebServiceManager alloc]init];
+    self.activityIndicator = [[ABActivityIndicator alloc]init];
     [self customSetup];
 
-    [self navigateToScanQRCodeViewControlller];
-    
+    if ( _productID ) {
+        [self getTransactionsWithProductID:_productID];
+    }
+    else {
+         [self navigateToScanQRCodeViewControlller];
+    }
+
     self.historyTableView.dataSource = self;
     self.historyTableView.delegate = self;
-    
-    [self getTransactions];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,12 +104,12 @@
 
 - ( NSInteger )tableView:( UITableView * )tableView numberOfRowsInSection:( NSInteger )section
 {
-    return 1;
+    return self.transactions.count;
 }
 
 - ( CGFloat )tableView:( UITableView * )tableView heightForRowAtIndexPath:( NSIndexPath * )indexPath
 {
-    return self.view.frame.size.height * 0.2;
+    return 250;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -125,25 +131,42 @@
     }
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
-    
+
+    ABHistory *history = self.transactions[indexPath.row];
+    cell.txID.text = history.txID;
+    cell.txType.text = history.txType;
+    cell.txInvoked.text = history.txInvoked;
+    cell.txOldData.text = history.txOldData;
+    cell.txNewData.text = history.txNewData;
+
+    //2017-12-25 10:06:04.566+00:00
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSSZ"];
+    NSDate *newDate = [dateFormatter dateFromString:history.txDate];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    cell.txDate.text = [dateFormatter stringFromDate:newDate];
+    cell.currentOwner.text = history.currentOwner;
+
     return cell;
 }
 
-- ( void )getTransactions
+- ( void )getTransactionsWithProductID:( NSString * )productID
 {
-    
-    [self.serviceManager getTransactionsWithSuccessResponse:^(NSMutableArray *transactions) {
+    [self.activityIndicator showActivityIndicator];
+
+    [self.serviceManager getTransactions:productID
+                     withSuccessResponse:^(NSMutableArray *transactions) {
+                         [self.activityIndicator stopActivityIndicator];
         self.transactions = transactions;
-        NSLog(@"bxhvhbvbb");
         [self.historyTableView reloadData];
-        
+
     } withFailureResponse:^(ABError *error) {
-        
+        [self.activityIndicator stopActivityIndicator];
         UIAlertController * alert = [UIAlertController
                                      alertControllerWithTitle:@"Error"
                                      message:error.errorMessage
                                      preferredStyle:UIAlertControllerStyleAlert];
-        
+
         //Add Buttons
         UIAlertAction* noButton = [UIAlertAction
                                    actionWithTitle:@"Cancel"
@@ -151,11 +174,12 @@
                                    handler:^(UIAlertAction * action) {
                                        //Handle no, thanks button
                                    }];
-        
+
         //Add your buttons to alert controller
         [alert addAction:noButton];
-        
+
         [self presentViewController:alert animated:YES completion:nil];
+
     }];
 }
 
@@ -168,9 +192,11 @@
  */
 - ( void )readerDidScanResult:( NSString * )result
 {
-    NSLog(@"Scan Result: %@",result);
     // Pop QR code reader view controller.
     [self.navigationController popViewControllerAnimated:YES];
+
+    self.title = result;
+    [self getTransactionsWithProductID:result];
 }
 
 @end

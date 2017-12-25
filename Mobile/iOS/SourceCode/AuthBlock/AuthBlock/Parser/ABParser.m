@@ -39,12 +39,20 @@
 {
     NSMutableArray *historyList = [[NSMutableArray alloc]init];
     
+    NSArray *timestamps = response[@"timeStamp"];
+
     if ( response )
     {
-        for (NSDictionary *dict in response)
+        for ( int i =0; i <  [timestamps count]; i++ )
         {
             ABHistory *history = [[ABHistory alloc]init];
-            history.transactionDate = dict[@"timestamp"];
+            history.txID = response[@"transactionID"][i];
+            history.txType = response[@"transactionType"][i];
+            history.txInvoked = response[@"transactionType"][i];
+            history.txOldData = response[@"transactionOldData"][i];
+            history.txNewData = response[@"transactionNewData"][i];
+            history.txDate = response[@"timeStamp"][i];
+            history.currentOwner = response[@"ownerHistory"][i];
             [historyList addObject:history];
         }
     }

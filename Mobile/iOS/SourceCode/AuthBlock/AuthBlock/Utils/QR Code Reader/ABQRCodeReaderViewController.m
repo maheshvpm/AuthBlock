@@ -120,7 +120,7 @@ didOutputMetadataObjects:( NSArray * )metadataObjects
 {
     // Avoid retain cycles.
     __weak typeof( self ) weakSelf = self;
-    
+
     // Check that view is ready and whether meta data objects array have data.
     if ( [metadataObjects count] > 0 ) {
 

@@ -12,17 +12,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ABProductListCell" rowHeight="136" id="KGk-i7-Jjw" customClass="ABProductListCell">
-            <rect key="frame" x="0.0" y="0.0" width="443" height="136"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ABProductListCell" rowHeight="145" id="KGk-i7-Jjw" customClass="ABProductListCell">
+            <rect key="frame" x="0.0" y="0.0" width="443" height="145"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="443" height="135.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="443" height="144.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="9kX-lP-Kj6">
                         <rect key="frame" x="15" y="15" width="100" height="105.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Tfp-bg-Zpq"/>
+                            <constraint firstAttribute="height" constant="105.5" id="xgK-iM-rr1"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDJ-7x-1IJ">
@@ -52,18 +53,30 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQT-XT-pIo">
+                        <rect key="frame" x="15" y="143" width="428" height="1"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="rUH-jl-DW7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" red="0.1960784314" green="0.4823529412" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="9kX-lP-Kj6" secondAttribute="bottom" constant="15" id="2KB-AF-JFQ"/>
                     <constraint firstItem="Z9x-9i-4sb" firstAttribute="leading" secondItem="9kX-lP-Kj6" secondAttribute="trailing" constant="10" id="613-I5-1tL"/>
                     <constraint firstAttribute="trailing" secondItem="BDJ-7x-1IJ" secondAttribute="trailing" constant="15" id="A60-nq-3qH"/>
                     <constraint firstAttribute="trailing" secondItem="Z9x-9i-4sb" secondAttribute="trailing" constant="15" id="AGu-8g-8Z4"/>
                     <constraint firstItem="6NY-Ba-GVg" firstAttribute="leading" secondItem="9kX-lP-Kj6" secondAttribute="trailing" constant="10" id="Ct0-eE-AtG"/>
+                    <constraint firstAttribute="trailing" secondItem="BQT-XT-pIo" secondAttribute="trailing" id="Eik-in-eA2"/>
                     <constraint firstItem="6NY-Ba-GVg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="IOu-aS-puj"/>
                     <constraint firstAttribute="trailing" secondItem="6NY-Ba-GVg" secondAttribute="trailing" constant="15" id="Ix4-Fs-TGU"/>
                     <constraint firstItem="9kX-lP-Kj6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="M47-pa-CeU"/>
                     <constraint firstItem="BDJ-7x-1IJ" firstAttribute="leading" secondItem="9kX-lP-Kj6" secondAttribute="trailing" constant="10" id="ZrI-II-ChQ"/>
+                    <constraint firstAttribute="bottom" secondItem="BQT-XT-pIo" secondAttribute="bottom" constant="1" id="aCp-UK-4Ug"/>
+                    <constraint firstItem="BQT-XT-pIo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dWg-cW-eu4"/>
                     <constraint firstItem="BDJ-7x-1IJ" firstAttribute="top" secondItem="Z9x-9i-4sb" secondAttribute="bottom" constant="5" id="jDf-Ot-5g1"/>
                     <constraint firstItem="9kX-lP-Kj6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="y6e-y5-6RC"/>
                     <constraint firstItem="Z9x-9i-4sb" firstAttribute="top" secondItem="6NY-Ba-GVg" secondAttribute="bottom" constant="5" id="yPD-dH-vTm"/>
@@ -76,7 +89,7 @@
                 <outlet property="productPrice" destination="BDJ-7x-1IJ" id="8k8-Pe-d1d"/>
                 <outlet property="productTitle" destination="6NY-Ba-GVg" id="V6x-PV-hPO"/>
             </connections>
-            <point key="canvasLocation" x="13.5" y="26"/>
+            <point key="canvasLocation" x="-110.5" y="-331.5"/>
         </tableViewCell>
     </objects>
     <resources>

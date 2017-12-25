@@ -93,9 +93,9 @@ heightForRowAtIndexPath:( NSIndexPath * )indexPath
     switch ( indexPath.section )
     {
         case ProductImage:
-            return self.view.frame.size.height * 0.4;
+            return 346.0f;
         case ProductDescription:
-            return self.view.frame.size.height * 0.15;
+            return 172.0f;
         case SellerInfo:
             return self.view.frame.size.height * 0.15;
         case Certification:
@@ -172,9 +172,10 @@ heightForFooterInSection:( NSInteger )section
             }
             cell.delegate = self;
             cell.productTitle.text = self.product.productName;
-            cell.productPrice.text = [NSString stringWithFormat:@"₹ %@",self.product.productPrice];
+            cell.productPrice.text = [NSString stringWithFormat:@"$ %@",self.product.productPrice];
             cell.backgroundColor = [UIColor clearColor];
             cell.contentView.backgroundColor = [UIColor clearColor];
+            cell.productDesciption.text = self.product.productDescription;
             return cell;
         }
         case SellerInfo:
@@ -217,21 +218,26 @@ heightForFooterInSection:( NSInteger )section
 {
     NSLog(@"Verify product for product id:%@", productId);
     ABHistoryViewController *historyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ABHistoryViewController"];
+    historyViewController.productID = [NSString stringWithFormat:@"%@",_product.produdtId];
     [self.navigationController pushViewController:historyViewController animated:YES];
 }
 
 -( void )getSellerInformation:(NSString *)userId {
-    
-    [self.serviceManager getSellerInfo:userId WithSuccessResponse:^(ABUser *user)  {
+
+    [self.activityIndicator showActivityIndicator];
+
+    [self.serviceManager getSellerInfo:userId withSuccessResponse:^(ABUser *user)  {
         self.sellerInfo = user;
         [self.productDetailTableView reloadData];
+        [self.activityIndicator stopActivityIndicator];
     } withFailureResponse:^(ABError *error) {
         
+        [self.activityIndicator stopActivityIndicator];
         UIAlertController * alert = [UIAlertController
                                      alertControllerWithTitle:@"Error"
                                      message:error.errorMessage
                                      preferredStyle:UIAlertControllerStyleAlert];
-        
+
         //Add Buttons
         UIAlertAction* noButton = [UIAlertAction
                                    actionWithTitle:@"Cancel"

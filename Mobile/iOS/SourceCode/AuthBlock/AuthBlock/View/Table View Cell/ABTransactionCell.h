@@ -10,9 +10,12 @@
 
 @interface ABTransactionCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *transactionDate;
-@property (weak, nonatomic) IBOutlet UILabel *productName;
-@property (weak, nonatomic) IBOutlet UILabel *sellerName;
-@property (weak, nonatomic) IBOutlet UILabel *price;
+@property (weak, nonatomic) IBOutlet UILabel *txID;
+@property (weak, nonatomic) IBOutlet UILabel *txType;
+@property (weak, nonatomic) IBOutlet UILabel *txInvoked;
+@property (weak, nonatomic) IBOutlet UILabel *txOldData;
+@property (weak, nonatomic) IBOutlet UILabel *txNewData;
+@property (weak, nonatomic) IBOutlet UILabel *txDate;
+@property (weak, nonatomic) IBOutlet UILabel *currentOwner;
 
 @end

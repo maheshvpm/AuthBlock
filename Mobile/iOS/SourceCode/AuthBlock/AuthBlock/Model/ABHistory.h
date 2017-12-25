@@ -10,8 +10,12 @@
 
 @interface ABHistory : NSObject
 
-@property ( nonatomic, strong ) NSString *transactionDate;
-@property ( nonatomic, strong ) NSString *previousOwner;
-@property ( nonatomic, strong ) NSString *currentOwner;
+@property ( strong, nonatomic ) NSString *txID;
+@property ( strong, nonatomic ) NSString *txType;
+@property ( strong, nonatomic ) NSString *txInvoked;
+@property ( strong, nonatomic ) NSString *txOldData;
+@property ( strong, nonatomic ) NSString *txNewData;
+@property ( strong, nonatomic ) NSString *txDate;
+@property ( strong, nonatomic ) NSString *currentOwner;
 
 @end
